@@ -108,4 +108,9 @@ if __name__ == '__main__':
 
 #
 
+# 修改字段类型
+
+# 查询ＰＭ25最严重前３０
+
+# select tm_date,day_tem,night_tem from yinchuan_T order by day_tem  limit 25;
 
