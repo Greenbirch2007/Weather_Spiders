@@ -19,7 +19,7 @@ if __name__ =='__main__':
     cur = connection.cursor()
 
     # sql 语句
-    count_sql = "select count(*) from yinchuan_T; "
+    count_sql = "select count(*) from xian_T; "
     cur.execute(count_sql)
     long_count = cur.fetchone()['count(*)']
     # sql 语句
@@ -27,7 +27,7 @@ if __name__ =='__main__':
     for num in range(1, long_count+1):
 
 
-        sql = 'select day_tem,night_tem,tm_date from yinchuan_T where id = %s ' % num
+        sql = 'select day_tem,night_tem,tm_date from xian_T where id = %s ' % num
         # #执行sql语句
         cur.execute(sql)
         # #获取所有记录列表
@@ -35,6 +35,6 @@ if __name__ =='__main__':
         big_list.append(data)
     print(big_list)
     head = ['day_tem','night_tem',"tm_date"]
-    csv_dict_write('/home/w/weather_data.csv',head,big_list)
+    csv_dict_write('E:\\Weather_Spiders\\weather_data.csv',head,big_list)
     print("数据导出完成～")
 
